@@ -2,6 +2,7 @@ import discord
 from discord.ext.commands import Bot
 from discord.ext import commands
 import random
+import os
 
 bot = discord.Client()
 bot_prefix = "!"
@@ -36,4 +37,4 @@ async def sil (ctx, number):
         mgs.append(x)
     await ctx.delete_messages(mgs)
 
-bot.run("NzY4OTQ3OTE3NDY5Nzc3OTUy.X5H4jQ.2xx2D-7q7VacoFxvHM4S-rmzTnA")
+bot.run(os.environ.get('token'))
