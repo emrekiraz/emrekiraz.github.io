@@ -14,7 +14,7 @@ async def on_ready():
     print("İsim: {}".format(bot.user.name))
     print("ID: {}".format(bot.user.id))
     print(str(len(set(bot.get_all_members()))) + " tane üye aktif.")
-    await bot.change_presence(activity=discord.Game(name="Compec'e Öğrenci Topluyor..."))
+    await bot.change_presence(game=discord.Game(name="Compec'e Öğrenci Topluyor..."))
 
 @bot.command(pass_context=True)
 async def posta(ctx):
