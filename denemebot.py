@@ -27,7 +27,7 @@ async def a(ctx, member : discord.Member):
             "https://thumbs.gfycat.com/LankyFewCoelacanth-small.gif"]
     embed = discord.Embed(title=ctx.message.author.name + " sana sarılıyor " + member.name)
     embed.set_image(url = random.choice(urll))
-    await ctx.send(embed=embed)
+    await bot.say(embed=embed)
 
 @bot.command(pass_context=True)
 async def sil (ctx, number):
