@@ -18,7 +18,7 @@ async def on_ready():
 
 @bot.command(pass_context=True)
 async def posta(ctx):
-    await ctx.send("Ben CompecMan!")
+    await bot.say("Ben CompecMan!")
 
 @bot.command(pass_context=True)
 async def a(ctx, member : discord.Member):
