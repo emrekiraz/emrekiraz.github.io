@@ -35,6 +35,6 @@ async def sil (ctx, number):
     number = int(number)
     async for x in bot.logs_from(ctx.message.channel, limit=number):
         mgs.append(x)
-    await ctx.delete_messages(mgs)
+    await bot.delete_messages(mgs)
 
 bot.run(os.environ.get('token'))
