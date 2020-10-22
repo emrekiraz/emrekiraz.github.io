@@ -33,7 +33,7 @@ async def a(ctx, member : discord.Member):
 async def sil (ctx, number):
     mgs = []
     number = int(number)
-    async for x in ctx.Messageable.history(ctx.message.channel, limit=number):
+    async for x in bot.logs_from(ctx.message.channel, limit=number):
         mgs.append(x)
     await ctx.delete_messages(mgs)
 
