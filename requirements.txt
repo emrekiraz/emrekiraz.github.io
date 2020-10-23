@@ -2,6 +2,5 @@ discord.py[voice] ~= 0.16.0
 pip
 aiohttp ~= 2.3.10
 websockets
-smtplib
 sys
 string
