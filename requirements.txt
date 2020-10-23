@@ -3,7 +3,6 @@ pip
 aiohttp ~= 2.3.10
 websockets
 aiodns==2.0.0
-aiohttp==3.6.3
 aiosmtpd==1.2
 appdirs==1.4.4
 asgiref==3.2.10
