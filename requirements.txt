@@ -1,4 +1,5 @@
 pip
+nltk
 aiodns==2.0.0
 aiohttp==3.6.3
 aiosmtpd==1.2
