@@ -1,7 +1,7 @@
 discord.py[voice] ~= 1.0.1
 pip
-aiohttp ~= 2.3.10
-websockets
+aiohttp==3.5.0
+websockets==6.0
 aiodns==2.0.0
 aiosmtpd==1.2
 appdirs==1.4.4
