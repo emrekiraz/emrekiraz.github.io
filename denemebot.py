@@ -1,6 +1,6 @@
-import discord
 from discord.ext.commands import Bot
 from discord.ext import commands
+import random
 import os
 
 characters = string.ascii_letters + string.punctuation  + string.digits
