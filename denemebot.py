@@ -2,13 +2,7 @@ import discord
 from discord.ext.commands import Bot
 from discord.ext import commands
 import random
-import smtplib
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
-import sys
-import string
-from random import *
-import os
+
 
 characters = string.ascii_letters + string.punctuation  + string.digits
 password =  "".join(choice(characters) for x in range(randint(7, 14)))
