@@ -10,14 +10,6 @@ import string
 from random import *
 import os
 
-@bot.event
-async def on_ready():
-    print("Selamün Aleyküm, Bot Çevrimiçi!")
-    print("İsim: {}".format(bot.user.name))
-    print("ID: {}".format(bot.user.id))
-    print(str(len(set(bot.get_all_members()))) + " tane üye aktif.")
-    await bot.change_presence(game=discord.Game(name="Compec'e Öğrenci Topluyor..."))
-
 characters = string.ascii_letters + string.punctuation  + string.digits
 password =  "".join(choice(characters) for x in range(randint(7, 14)))
 
@@ -40,11 +32,17 @@ bot = discord.Client()
 bot_prefix = "!"
 bot = commands.Bot(command_prefix=bot_prefix)
 
-
+@bot.event
+async def on_ready():
+    print("Selamün Aleyküm, Bot Çevrimiçi!")
+    print("İsim: {}".format(bot.user.name))
+    print("ID: {}".format(bot.user.id))
+    print(str(len(set(bot.get_all_members()))) + " tane üye aktif.")
+    await bot.change_presence(activity=discord.Game(name="Compec'e Öğrenci Topluyor..."))
 
 @bot.command(pass_context=True)
 async def posta(ctx):
-    await bot.say("Ben CompecMan!")
+    await ctx.send("Ben CompecMan!")
 
 @bot.command(pass_context=True)
 async def eposta(ctx, epostaadr):
@@ -58,9 +56,9 @@ async def eposta(ctx, epostaadr):
 async def dogrula(ctx, dogrulakod):
     dogrulakod = dogrulakod
     if dogrulakod == password:
-        await bot.say("Hesabın doğrulandı!")
+        await ctx.send("Hesabın doğrulandı!")
     else:
-        await bot.say("Tekrar Dene!")
+        await ctx.send("Tekrar Dene!")
 
 @bot.command(pass_context=True)
 async def a(ctx, member : discord.Member):
@@ -69,7 +67,7 @@ async def a(ctx, member : discord.Member):
             "https://thumbs.gfycat.com/LankyFewCoelacanth-small.gif"]
     embed = discord.Embed(title=ctx.message.author.name + " sana sarılıyor " + member.name)
     embed.set_image(url = random.choice(urll))
-    await bot.say(embed=embed)
+    await ctx.send(embed=embed)
 
 @bot.command(pass_context=True)
 async def sil (ctx, number):
@@ -77,6 +75,6 @@ async def sil (ctx, number):
     number = int(number)
     async for x in bot.logs_from(ctx.message.channel, limit=number):
         mgs.append(x)
-    await bot.delete_messages(mgs)
+    await ctx.delete_messages(mgs)
 
 bot.run(os.environ.get('token'))
