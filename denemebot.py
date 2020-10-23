@@ -5,7 +5,6 @@ import random
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-import sys
 import string
 from random import *
 import os
