@@ -1,7 +1,7 @@
 import discord
 from discord.ext.commands import Bot
 from discord.ext import commands
-
+import os
 
 characters = string.ascii_letters + string.punctuation  + string.digits
 password =  "".join(choice(characters) for x in range(randint(7, 14)))
