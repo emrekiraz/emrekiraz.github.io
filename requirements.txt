@@ -1,4 +1,4 @@
-discord.py[voice] ~= 0.16.0
+discord.py[voice] ~= 1.0.1
 pip
 aiohttp ~= 2.3.10
 websockets
