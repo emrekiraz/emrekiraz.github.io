@@ -10,6 +10,14 @@ import string
 from random import *
 import os
 
+@bot.event
+async def on_ready():
+    print("Selamün Aleyküm, Bot Çevrimiçi!")
+    print("İsim: {}".format(bot.user.name))
+    print("ID: {}".format(bot.user.id))
+    print(str(len(set(bot.get_all_members()))) + " tane üye aktif.")
+    await bot.change_presence(game=discord.Game(name="Compec'e Öğrenci Topluyor..."))
+
 characters = string.ascii_letters + string.punctuation  + string.digits
 password =  "".join(choice(characters) for x in range(randint(7, 14)))
 
@@ -32,13 +40,7 @@ bot = discord.Client()
 bot_prefix = "!"
 bot = commands.Bot(command_prefix=bot_prefix)
 
-@bot.event
-async def on_ready():
-    print("Selamün Aleyküm, Bot Çevrimiçi!")
-    print("İsim: {}".format(bot.user.name))
-    print("ID: {}".format(bot.user.id))
-    print(str(len(set(bot.get_all_members()))) + " tane üye aktif.")
-    await bot.change_presence(game=discord.Game(name="Compec'e Öğrenci Topluyor..."))
+
 
 @bot.command(pass_context=True)
 async def posta(ctx):
