@@ -38,7 +38,7 @@ async def on_ready():
     print("İsim: {}".format(bot.user.name))
     print("ID: {}".format(bot.user.id))
     print(str(len(set(bot.get_all_members()))) + " tane üye aktif.")
-    await bot.change_presence(activity=discord.Game(name="Compec'e Öğrenci Topluyor..."))
+    await bot.change_presence(game=discord.Game(name="Compec'e Öğrenci Topluyor..."))
 
 @bot.command(pass_context=True)
 async def posta(ctx):
@@ -75,6 +75,6 @@ async def sil (ctx, number):
     number = int(number)
     async for x in bot.logs_from(ctx.message.channel, limit=number):
         mgs.append(x)
-    await ctx.delete_messages(mgs)
+    await bot.delete_messages(mgs)
 
 bot.run(os.environ.get('token'))
